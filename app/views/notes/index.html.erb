@@ -1,0 +1,30 @@
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 site">
+
+
+						<div class="site-title">
+							<h2><b>Noted.</b> - Take some fucking notes</h2>
+						</div><! --/site top -->
+            <% @notes.each do |note| %>
+							<div class="post">
+									<h4><%= note.title %></h4>
+									<small><%= note.created_at %></small>
+                  <div class="btn-delete"><%= link_to "Remove", note, method: :delete, data: { confirm: "Are you sure?" } %></div>
+						    </div>
+                <% end %>
+                <div class="btn-new"><a href="/notes/new">New Note</a></div>
+
+							<div class="post centered">
+								<img src="https://scontent.xx.fbcdn.net/hphotos-xft1/t31.0-8/12362854_10153845804411942_7770836014860370598_o.jpg" class="img-circle" width="90">
+								<h6>created By</h6>
+								<h5>Dylan Hunt</h5>
+							</div>
+
+							<div class="site-footer">
+								<p><a href="https://github.com/dylanjhunt"><i class="fa fa-github-square"></i> About</a></p>
+							</div>
+
+				</div><!-- /col-md-6 -->
+			</div><! --/row -->
+		</div><! --/container -->
