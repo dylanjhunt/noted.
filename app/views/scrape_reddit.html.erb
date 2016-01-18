@@ -15,7 +15,7 @@
         </div><! --/site top -->
         <% @entriesArray.each do |entry| %>
           <div class="post">
-              <h4><p><%= entry.title %></p></h4>
+              <a href="http://reddit.com/<%= entry.link %>"><h4><p><%= entry.title %></p></h4></a>
             </div>
             <% end %>
             <div class="noted">

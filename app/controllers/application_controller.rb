@@ -4,10 +4,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   class Entry
-  def initialize(title)
+  def initialize(title, link)
     @title = title
+    @link = link
   end
   attr_reader :title
+  attr_reader :link
 end
 
 def scrape_reddit
@@ -18,7 +20,8 @@ def scrape_reddit
   @entriesArray = []
   entries.each do |entry|
     title = entry.css('p.title>a').text
-    @entriesArray << Entry.new(title)
+    link = entry.css('p.title>a')[0]['href']
+    @entriesArray << Entry.new(title, link)
   end
 
   render template: 'scrape_reddit'
