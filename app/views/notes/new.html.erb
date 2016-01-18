@@ -5,16 +5,16 @@
 
 						<div class="site-title">
 							<h2><b>Hey!</b> - Please write down a random fucking thought.</h2>
-							<h3>Your note will be noted.</h3>
+							<h2>Your note will be noted.</h2>
 						</div><! --/site top -->
             <div class="newnote">
-            <h2>Add New Note</h2>
+            <h2>Add New Thought</h2>
             <%= form_for @note do |f| %>
               <div class="field">
                 <%= f.text_field :title, autofocus: true %>
               </div>
               <div class="note-btn">
-                <%= f.submit "Note" %>
+                <%= f.submit "Add Thought" %>
               </div>
             <% end %>
           </div>
