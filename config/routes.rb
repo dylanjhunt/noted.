@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :notes
 
-  root 'notes#index'
+  root 'application#scrape_reddit'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
